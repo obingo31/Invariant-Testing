@@ -1,0 +1,5 @@
+WETH9_Deposit_Test
+└── when deposit is called
+    ├── it should increase the balance of the sender by the deposited amount
+    ├── it should emit a Deposit event with the correct sender and amount
+    └── it should update the total balance of the contract

@@ -1,0 +1,39 @@
+diff --git a/playground/src/PrecisionLoss/PrecisionLoss.sol b/playground/src/PrecisionLoss/PrecisionLoss.sol
+index b65cd1d..b1d1552 100644
+--- a/playground/src/PrecisionLoss/PrecisionLoss.sol
++++ b/playground/src/PrecisionLoss/PrecisionLoss.sol
+@@ -5,8 +5,8 @@ contract PrecisionLoss {
+     uint256 constant le12 = 1e12;
+ 
+     function ussdAmountToBuy(uint256 ussdAmount, uint256 daiAmount) public pure returns (uint256) {
+-    return (ussdAmount - daiAmount / le12) / 2 * le12;  // This will show precision loss
+-}
++        return (ussdAmount - daiAmount / le12) / 2 * le12; // This will show precision loss
++    }
+ 
+     function ussdModifiedAmountToBuy(uint256 ussdAmount, uint256 daiAmount) public pure returns (uint256) {
+         return (ussdAmount - daiAmount / le12) * le12 / 2;
+diff --git a/playground/test/Invariant.t.sol b/playground/test/Invariant.t.sol
+index ccd2951..37ca388 100644
+--- a/playground/test/Invariant.t.sol
++++ b/playground/test/Invariant.t.sol
+@@ -7,7 +7,6 @@ import {InvariantHandler} from "./handler.sol";
+ import "forge-std/console2.sol";
+ import {Test, Vm, console} from "forge-std/Test.sol";
+ 
+-
+ contract InvariantTest is Test {
+     PrecisionLoss internal _underlying;
+     // handler exposes real contract
+diff --git a/playground/test/handler.sol b/playground/test/handler.sol
+index 57875b1..b76fb9d 100644
+--- a/playground/test/handler.sol
++++ b/playground/test/handler.sol
+@@ -6,7 +6,6 @@ import {PrecisionLoss} from "src/PrecisionLoss/PrecisionLoss.sol";
+ // import "forge-std/console2.sol";
+ import {Test, Vm, console} from "forge-std/Test.sol";
+ 
+-
+ import {CommonBase} from "forge-std/Base.sol";
+ import {StdUtils} from "forge-std/StdUtils.sol";
+ import {StdCheats} from "forge-std/StdCheats.sol";

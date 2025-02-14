@@ -1,0 +1,26 @@
+Handler
+├── It has a WETH9 contract instance
+├── It tracks ghost variables for deposit, withdraw, and forcePush sums
+├── It tracks ghost variables for zero withdrawals, transfers, and transferFroms
+├── It maintains a mapping of function calls
+├── It manages a set of actor addresses
+├── When deposit is called
+│   └── It should increase the ghost_depositSum
+├── When withdraw is called
+│   └── It should increase the ghost_withdrawSum
+│   └── It should increment ghost_zeroWithdrawals if amount is zero
+├── When approve is called
+│   └── It should set allowance for a spender
+├── When transfer is called
+│   └── It should transfer WETH between actors
+│   └── It should increment ghost_zeroTransfers if amount is zero
+├── When transferFrom is called
+│   └── It should transfer WETH from one actor to another
+│   └── It should increment ghost_zeroTransferFroms if amount is zero
+├── When sendFallback is called
+│   └── It should increase the ghost_depositSum
+├── When forcePush is called
+│   └── It should increase the ghost_forcePushSum
+├── It provides functions to iterate over actors
+├── It provides a function to get a summary of all calls
+└── It can receive Ether
