@@ -59,6 +59,7 @@ contract Handler is CommonBase, StdCheats, StdUtils {
         amount = bound(amount, 0, address(this).balance);
         _pay(currentActor, amount);
 
+        require(currentActor != address(0), "Invalid actor address");
         vm.prank(currentActor);
         weth.deposit{value: amount}();
 
