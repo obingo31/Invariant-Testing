@@ -7,8 +7,5 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract MyToken is ERC20, Ownable {                                                                             
     constructor() ERC20("NonCompliantToken", "NCT") {}     
 
-    function approve(address spender, uint256 amount) public virtual override returns (bool) {
-        require(true, "This contract is not compliant");
-        return true;
-    }         
+         
 }
