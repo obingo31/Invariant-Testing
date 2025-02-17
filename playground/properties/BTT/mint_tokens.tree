@@ -1,0 +1,12 @@
+mint_tokens.tree
+├── given the sender is not the owner
+│   └── it should revert
+└── given the sender is the owner
+    ├── when amount is zero
+    │   └── it should revert
+    └── when amount is not zero
+        └── it should mint
+        ├── given a target address and an amount
+           ├── when minting tokens
+              ├── it should update the target's balance
+               └── it should update the total supply

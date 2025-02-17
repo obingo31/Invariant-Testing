@@ -1,0 +1,29 @@
+CryticTokenTest
+├── When token is newly deployed
+│   ├── It should mint INITIAL_BALANCE to USER1
+│   ├── It should mint INITIAL_BALANCE to USER2
+│   ├── It should mint INITIAL_BALANCE to USER3
+│   ├── It should mint INITIAL_BALANCE to deployer
+│   └── It should set isMintableOrBurnable to true
+├── When transferring tokens
+│   ├── When sender has sufficient balance
+│   │   ├── It should decrease sender balance
+│   │   └── It should increase receiver balance
+│   └── When sender has insufficient balance
+│       └── It should revert
+├── When approving tokens
+│   ├── It should set allowance correctly
+│   └── When increasing allowance
+│       └── It should add to existing allowance
+├── When using transferFrom
+│   ├── When spender has sufficient allowance
+│   │   ├── It should transfer tokens correctly
+│   │   └── It should decrease allowance
+│   └── When spender has insufficient allowance
+│       └── It should revert
+└── When burning tokens
+    ├── When account has sufficient balance
+    │   ├── It should decrease total supply
+    │   └── It should decrease account balance
+    └── When account has insufficient balance
+        └── It should revert
