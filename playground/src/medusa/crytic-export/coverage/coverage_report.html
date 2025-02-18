@@ -1,0 +1,1899 @@
+<html lang=en>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coverage Report</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin: 15px;
+            background-color: #eee;
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+        }
+        header {
+            flex: 0 1 auto;
+        }
+        footer {
+            flex: 0 1 auto;
+        }
+        hr {
+            margin: 15px 0px;
+            background-color: transparent;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+        a {
+            color: #2A5DB0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:active {
+            color: black;
+        }
+        a:visited {
+            color: #2A5DB0;
+        }
+        footer {
+            line-height: 1.5;
+        }
+        .progress-coverage {
+            width: 50px;
+        }
+        .unselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .button-sort {
+
+        }
+        .split-panel {
+            display: flex;
+            position: relative;
+            height: 100%;
+        }
+        #file-split-panel {
+            flex-flow: column;
+            flex: 1 1 auto;
+            overflow-y: auto;
+        }
+        #file-tree-panel {
+            min-width: 250px;
+            width: 20%;
+            height: 100%;
+            overflow: scroll;
+        }
+        #main-view-panel {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 12px;
+        }
+        .collapsible-active, .collapsible:hover {
+            background-color: #555;
+        }
+        .collapsible:after {
+            content: "\002B";
+            color: white;
+            font-weight: bold;
+            float: left;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .collapsible-active:after {
+            content: "\2212";
+        }
+        .collapsible-active + .collapsible-container {
+            max-height: none;
+        }
+        .collapsible-container {
+            margin-bottom: 5px;
+            max-height: 0;
+            overflow: hidden;
+            background-color: #ddd;
+        }
+        .collapsible-container-content {
+            padding: 15px;
+        }
+        .code-coverage-table {
+            border-collapse: collapse;
+            font-family: "Lucida Console", Monaco, monospace;
+            font-size: 12px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            tab-size: 4;
+            width: 100%;
+        }
+        .row-line-number {
+            width: 10px;
+            text-align: right;
+            padding-right: 3px;
+            color: rgba(0, 0, 0, 0.50);
+        }
+        .row-reverted-status {
+            font-size: 12px;
+            text-align: center;
+            min-width: 10px;
+            background-color: rgba(0, 0, 0, 0.04);
+            color: rgba(0, 0, 0, 0.70);
+            white-space: nowrap;
+        }
+        .row-source {
+            width: 100%;
+            padding-left: 20px;
+        }
+        .row-line-covered {
+            background-color: rgba(23, 255, 0, 0.12);
+            width: min-content;
+        }
+        .row-line-uncovered {
+            background-color: rgba(255, 0, 0, 0.10);
+            width: min-content;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        <h1>Coverage Report</h1>
+        <hr />
+        <table>
+            <tr><th>Files: </th><td>1</td></tr>
+            <tr><th>Lines: </th><td>65</td></tr>
+            <tr>
+                <th>Covered: </th>
+                <td>
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    17 / 19 (89.5%)
+                    <progress class="progress-coverage" value="89" max="100" style="accent-color: hsl(89, 100%, 60%)"></progress>
+                </td>
+            </tr>
+            <tr>
+                <th>Actions: </th>
+                <td>
+                    <button class="button button-sort" onclick="setAllSourceFilesCollapsed(false)">Expand All</button>
+                    <button class="button button-sort" onclick="setAllSourceFilesCollapsed(true)">Collapse All</button> /
+                    <button class="button button-sort" onclick="setEmptySourceFilesCollapsed(false)">Expand Empty</button>
+                    <button class="button button-sort" onclick="setEmptySourceFilesCollapsed(true)">Collapse Empty</button>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <hr />
+    
+    <div class="split-panel" id="file-split-panel">
+        
+        <div id="main-view-panel">
+            
+            
+            
+                
+                
+                
+                
+
+                
+                <div class="source-file" data-file-path="deposit.sol" data-lines-active="19" data-lines-covered="17">
+                    <button class="collapsible">
+                        
+                        <span><progress class="progress-coverage" value="89" max="100" style="accent-color: hsl(89, 100%, 60%)"></progress></span>
+                        <span>[89%]</span>
+                        <span>deposit.sol</span>
+                    </button>
+                    <div class="collapsible-container">
+                        <div class="collapsible-container-content">
+                        <hr />
+                        
+                        <table>
+                            <tr>
+                                <th>Lines covered: </th>
+                                <td>17 / 19 (89.5%)</td>
+                            </tr>
+                        </table>
+                        <hr />
+                        
+                        <table class="code-coverage-table">
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">1</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-uncovered">contract DepositContract {</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">2</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    // @notice MAX_DEPOSIT_AMOUNT is the maximum amount that can be deposited into this contract</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">3</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 1</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 1</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">    uint256 public constant MAX_DEPOSIT_AMOUNT = 1_000_000e18;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">4</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">5</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    // @notice balances holds user balances</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">6</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 58</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 58</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">    mapping(address =&gt; uint256) public balances;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">7</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">8</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    // @notice totalDeposited represents the current deposited amount across all users</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">9</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-uncovered">    uint256 public totalDeposited;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">10</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">11</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    // @notice Deposit event is emitted after a deposit occurs</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">12</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    event Deposit(address depositor, uint256 amount, uint256 totalDeposited);</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">13</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">14</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    // @notice deposit allows user to deposit into the system</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">15</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    function deposit() public payable {</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">16</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // Make sure that the total deposited amount does not exceed the limit</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">17</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 2</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 2</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        uint256 amount = msg.value;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">18</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 3</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 3</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        require(totalDeposited &#43; amount &lt;= MAX_DEPOSIT_AMOUNT);</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">19</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">20</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // Update the user balance and total deposited</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">21</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 3</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        balances[msg.sender] &#43;= amount;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">22</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 3</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        totalDeposited &#43;= amount;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">23</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">24</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 4</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        emit Deposit(msg.sender, amount, totalDeposited);</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">25</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    }</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">26</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>}</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">27</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">28</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>contract TestDepositContract {</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">29</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">30</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    // @notice depositContract is an instance of DepositContract</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">31</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    DepositContract depositContract;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">32</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">33</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    constructor() payable {</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">34</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // Deploy the deposit contract</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">35</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 25</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        depositContract = new DepositContract();</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">36</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    }</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">37</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">38</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    // @notice testDeposit tests the DepositContract.deposit function</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">39</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    function testDeposit(uint256 _amount) public {</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">40</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // Let&#39;s bound the input to be _at most_ the ETH balance of this contract</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">41</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // The amount value will now in between [0, address(this).balance]</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">42</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 4</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 4</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        uint256 amount = clampLte(_amount, address(this).balance);</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">43</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">44</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // Retrieve balance of user before deposit</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">45</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 13</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 13</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        uint256 preBalance = depositContract.balances(address(this));</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">46</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">47</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // Call the deposit contract with a variable amount</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">48</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 12</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 12</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        depositContract.deposit{value: _amount}();</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">49</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">50</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // Assert post-conditions</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">51</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 14</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        assert(depositContract.balances(address(this)) == preBalance &#43; amount);</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">52</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        // Add other assertions here</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">53</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    }</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">54</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">55</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    // @notice clampLte returns a value between [a, b]</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">56</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 1</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 1</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">    function clampLte(uint256 a, uint256 b) internal returns (uint256) {</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">57</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 2</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 2</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        if (!(a &lt;= b)) {</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">58</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 4</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">            uint256 value = a % (b &#43; 1);</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">59</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 1</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">            return value;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">60</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>        }</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">61</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed without reverting.">√ 1</div>
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                                <div title="The source line executed, but was reverted.">⟳ 1</div>
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre class="row-line-covered">        return a;</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">62</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>    }</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">63</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">64</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre>}</pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr>
+                                    
+                                    <td class="row-line-number unselectable">65</td>
+
+                        
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+                        <td class="row-reverted-status unselectable">
+                            
+                        </td>
+
+                                    
+                                    
+                                    
+                                    <td class="row-source">
+                                        
+                                                <pre></pre>
+                                        
+                                    </td>
+                                </tr>
+                            
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+
+<script>
+    
+    const collapsibleHeaders = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < collapsibleHeaders.length; i++) {
+        collapsibleHeaders[i].addEventListener("click", function() {
+            this.classList.toggle("collapsible-active");
+        });
+    }
+
+    
+    const fileTree = document.getElementById("file-tree");
+    const sourceFiles = document.getElementsByClassName("source-file");
+    for (let i = 0; i < sourceFiles.length; i++) {
+        
+        let sourceFileDataSet = sourceFiles[i].dataset;
+        let filePathParts = sourceFileDataSet.filePath.split(/[\/\\]+/)
+        if (filePathParts.length > 0) {
+            addSourceFileToTree(fileTree, filePathParts, sourceFileDataSet)
+        }
+    }
+
+    
+    
+    
+    
+    function addSourceFileToTree(currentList, filePathParts, sourceFileDataSet) {
+        
+        if (filePathParts.length === 0) {
+            return;
+        }
+
+        
+        let currentListItems = currentList.getElementsByTagName("li");
+        let currentListItem = null;
+        for (let i = 0; i < currentListItems.length; i++) {
+            
+            if (currentListItems[i].getAttribute("data-name") === filePathParts[0]) {
+                currentListItem = currentListItems[i];
+            }
+        }
+        
+        if (currentListItem === null) {
+            
+            currentListItem = document.createElement("li");
+            currentListItem.setAttribute("data-name", filePathParts[0]);
+            currentList.appendChild(currentListItem);
+
+            
+            let textElement = currentListItem;
+            if (filePathParts.length > 1) {
+                let spanElement = document.createElement("span");
+                currentListItem.appendChild(spanElement);
+                textElement = spanElement;
+            }
+
+            
+            textElement.innerText = filePathParts[0]
+
+            
+            let nextList = document.createElement("ul");
+            currentListItem.appendChild(nextList);
+        }
+
+        
+        if (filePathParts.length >= 1) {
+            
+            let nextList = currentListItem.getElementsByTagName("ul")[0];
+
+            
+            addSourceFileToTree(nextList, filePathParts.slice(1), sourceFileDataSet)
+        }
+    }
+
+    
+    function setAllSourceFilesCollapsed(collapsed) {
+        let i;
+        for (i = 0; i < collapsibleHeaders.length; i++) {
+            if (collapsed) {
+                collapsibleHeaders[i].classList.remove("collapsible-active");
+            } else {
+                collapsibleHeaders[i].classList.add("collapsible-active");
+            }
+        }
+    }
+
+    
+    function setEmptySourceFilesCollapsed(collapsed) {
+        let i;
+        for (i = 0; i < sourceFiles.length; i++) {
+            
+            if (sourceFiles[i].dataset.linesActive <= 0) {
+                let collapsibleHeader = sourceFiles[i].querySelector('.collapsible');
+                if (collapsed) {
+                    collapsibleHeader.classList.remove("collapsible-active");
+                } else {
+                    collapsibleHeader.classList.add("collapsible-active");
+                }
+            }
+        }
+    }
+
+    
+    if (collapsibleHeaders.length === 1 && !collapsibleHeaders.className.contains("collapsible-active")) {
+        collapsibleHeaders[0].click();
+    }
+</script>
+
+<hr />
+<footer>
+    <center>
+        Report generated by medusa
+        <br />
+        2025-02-18 17:18:38.678497519 &#43;0000 UTC
+        <br />
+        <a href="https://github.com/crytic/medusa">github.com/crytic/medusa</a>
+    </center>
+</footer>
+</body>
+</html>

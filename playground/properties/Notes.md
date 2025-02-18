@@ -1,5 +1,6 @@
-# Smart Contract Property Testing: A Deep Dive into ERC-20 Validation
+# Property Testing: Playground
 
+In this playground we explore property testing
 
 ## Overview
 This repository demonstrates comprehensive property-based testing for ERC-20 tokens using Echidna and Bulloak. We'll explore how to validate token implementations against security properties and invariants.
@@ -52,17 +53,10 @@ echidna CryticERC20ExternalHarness.sol --contract CryticERC20ExternalHarness --c
 - Allowance management
 - Burn/Mint authorization
 
----
 
-🔍 **Want to dive deeper?** Check out the full article on Substack for:
-- Detailed property analysis
-- Advanced testing patterns
-- Complete test outputs
-- Edge case handling
-- Security considerations
+🔍 **Want to dive deeper?** Check out the full article on Substack for more:
 
-[Click Me](https://obingo77.substack.com/publish/post/157328452)
-
+[Read Full Article](https://obingo77.substack.com/p/your-post-slug)
 ---
 
 ## Test Results Preview
@@ -74,31 +68,26 @@ test_ERC20external_pausedTransfer(address,uint256): passing
 ```
 
 ## Contributing
-Contributions welcome! 
-
-## License
-MIT
-
----
-
-[The Substack article would continue with:]
 
 # Advanced ERC-20 Property Testing: The Deep Dive
 
 ## Understanding the Test Harness
+
 Our test harness combines five critical property sets:
-```solidity
+
+```ruby
 contract CryticERC20ExternalHarness is
     CryticERC20ExternalBasicProperties,
     CryticERC20ExternalBurnableProperties,
     CryticERC20ExternalMintableProperties,
     CryticERC20ExternalPausableProperties,
     CryticERC20ExternalIncreaseAllowanceProperties {
-    // Implementation
+     // Implementation
 }
 ```
 
 ## Complete Test Output Analysis
+
 Running our test suite yields comprehensive results:
 ```bash
 [2025-02-17 16:15:28.05] Compiling CryticERC20ExternalHarness.sol...
@@ -124,20 +113,14 @@ Tester.transferFrom(0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC, 0x70997970C51812
 Tester.burn(100) from: 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 Time delay: 0
 Tester.increaseAllowance(0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC, 300) from: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 Time delay: 75
 ```
-- Minting tokens 
-- Transfer between users
-- Approval and TransferFrom operations
-- Burn functionality (since your contract is burnable)
-- IncreaseAllowance (which is specifically imported in your contract)
-- Various time delays between operations
-- Uses addresses that match your contract's USER constants
 
 ### 1. Basic Properties
 - Transfer validation
 - Balance checks
 - Supply constraints
 
-lets build the BTT tree
+### lets build the BTT tree
+
 ```bash
 bulloak scaffold token_properties.tree
 ``
@@ -178,14 +161,17 @@ CryticTokenTest
 
 ## Initial State Verification
 ### Deployment State Tests
+```bash
 - Initial token distribution
   - Validates INITIAL_BALANCE minting to USER1, USER2, USER3
   - Confirms deployer allocation
 - Contract configuration
   - Verifies isMintableOrBurnable flag state
+```
 
 ## Core Transfer Functionality
 ### Direct Transfers
+```bash
 - Success Cases
   - Balance reduction for sender
   - Balance increase for receiver
@@ -193,8 +179,10 @@ CryticTokenTest
 - Failure Cases
   - Insufficient balance handling
   - Proper reversion behavior
+```  
 
 ### Delegated Transfers (transferFrom)
+```bash
 - Success Path
   - Proper token movement
   - Allowance reduction
@@ -202,31 +190,38 @@ CryticTokenTest
 - Failure Path
   - Insufficient allowance handling
   - Proper reversion behavior
+```  
 
 ## Allowance Management
 ### Approval System
+```md
 - Basic Approval
   - Allowance setting verification
   - Overwrite behavior
 - Allowance Increase
   - Increment functionality
   - Accumulation verification
+```  
 
 ##  Token Supply Management
 ### Burn Functionality
 - Success Conditions
+```md
   - Total supply reduction
   - Balance reduction
   - State consistency
 - Failure Conditions
   - Insufficient balance handling
   - Proper reversion
+```  
 
 ## Test Coverage Analysis
 **State Management**
+```md
    - Initial state validation
    - State transitions
    - Final state verification
+```   
 
  **Error Handling**
    - Explicit reversion cases
@@ -274,7 +269,6 @@ Corresponding Echidna tests:
 - `test_ERC20external_userBalanceNotHigherThanSupply()`
 - `test_ERC20external_userBalancesLessThanTotalSupply()`
 
-## "When approving tokens" Branch
 ### Basic Approval:
 - `test_ERC20external_setAllowance(address,uint256)`
 - `test_ERC20external_setAllowanceTwice(address,uint256)`
@@ -313,12 +307,11 @@ Corresponding Echidna tests:
 - Total calls: 68,736
 ```
 
-## Alignment Status
+# Run tests
 
-- The implementation provides comprehensive coverage of the tree specification
-- Includes additional edge cases not explicitly specified
-- All major branches have corresponding test cases
-- Some tests cover multiple branches simultaneously
+```bash
+echidna CryticERC20ExternalHarness.sol --contract CryticERC20ExternalHarness --config echidna-internal.yaml
+```
 
 output:
 
