@@ -7,3 +7,6 @@
 [submodule "playground/lib/properties"]
 	path = playground/lib/properties
 	url = https://github.com/crytic/properties
+[submodule "playground/src/echidna/lib/forge-std"]
+	path = playground/src/echidna/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
