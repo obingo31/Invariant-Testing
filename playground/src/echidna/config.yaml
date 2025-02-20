@@ -1,0 +1,31 @@
+# Echidna configuration file for The Rewarder Pool testing
+
+# Test parameters
+testLimit: 50000           # Number of test sequences to run
+testTimeout: 300           # Maximum time (in seconds) to spend testing
+seqLen: 100               # Maximum sequence length of transactions
+shrinkLimit: 5000         # Maximum number of times to shrink a failing test
+coverage: true            # Enable coverage guided testing
+
+# Contract settings
+deployer: "0x10000"       # Address that will deploy the contracts
+sender: ["0x10000"]       # List of addresses that can send transactions
+
+# Transaction settings
+maxValue: 100000000000000000000  # Maximum value (in wei) that can be sent
+maxGas: 12000000                 # Maximum gas that can be used per tx
+
+# Block settings
+balanceContract: 0              # Initial balance of the contract
+timeDelay: 604800              # Time delay between blocks (7 days in seconds)
+blockTime: true                # Enable block timestamp operations
+
+# Solidity optimization
+solcArgs: "--optimize"         # Solidity compiler arguments
+
+# Filtering and output
+filterFunctions: []            # Functions to filter out (empty = no filter)
+filterBlacklist: false        # True = whitelist, False = blacklist
+cryticArgs: []                # Additional arguments for crytic
+corpusDir: "corpus"           # Directory to store corpus
+format: text                  # Output format (text/json/none)

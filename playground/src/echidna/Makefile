@@ -1,9 +1,4 @@
-# Invariants
-echidna:
-
-echidna-assert:
-
-echidna-explore:
+# Invariants Testing Playground
 
 # Initialize project
 init:
@@ -11,5 +6,19 @@ init:
     @echo "Project initialized successfully"
 
 # Medusa
-medusa: 
-    medusa fuzz --config medusa.json
+medusa:
+medusa fuzz --config ./mrdusa.json
+
+echidna:
+    @echidna-test EchidnaRewarder.sol --contract EchidnaRewarder --config rewarder.yaml
+
+echidna-assert:
+    @echidna-test EchidnaRewarder.sol --contract EchidnaRewarder --config rewarder.yaml --test-mode assertion
+
+echidna-explore:
+    @echidna-test EchidnaRewarder.sol --contract EchidnaRewarder --config rewarder.yaml --test-mode exploration  
+
+echidna:
+        echidna . --contract EchidnaRewarder --config ./rewarder.yaml
+
+               

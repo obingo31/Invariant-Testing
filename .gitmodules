@@ -10,3 +10,6 @@
 [submodule "playground/src/echidna/lib/forge-std"]
 	path = playground/src/echidna/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "playground/src/echidna/lib/openzeppelin-contracts"]
+	path = playground/src/echidna/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts

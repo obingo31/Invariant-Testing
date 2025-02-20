@@ -1,9 +1,25 @@
+# Echidna configuration for The Rewarder Pool testing
+
+# Test parameters
 testMode: assertion
 testLimit: 100000
+seqLen: 100
+shrinkLimit: 5000
+coverage: true
 
-deployer: '0x10000'
-sender: ['0x30000'] # to have a different sender of TXs then deployer
-
-# fixes the issue with a constructor on:
-# revert, out-of-gas, sending ether to an non-payable constructor
+# Contract settings
+deployer: "0x10000"
+sender: ["0x30000"]
 codeSize: 0xffffffffff
+
+# Transaction settings
+maxValue: 100000000000000000000  # Changed from maxValueSize
+
+# Compiler settings
+solcArgs: "--optimize"    # Changed from array to string
+
+# Output settings
+corpusDir: "corpus"
+format: "text"
+filterFunctions: []
+filterBlacklist: false
